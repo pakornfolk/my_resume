@@ -160,11 +160,12 @@
 
         <h2 id="experience" class="section-title" data-en="Internship Experience" data-th="ประสบการณ์ฝึกงาน">Internship Experience</h2>
         <div class="experience-container">
+            <!-- Year 2 Internship Card -->
             <div class="exp-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                 <div class="exp-icon"><i class="fas fa-star"></i></div>
                 <div class="exp-info">
                     <h3 data-en="Faculty of Nursing, Mahidol University" data-th="คณะพยาบาลศาสตร์ มหาวิทยาลัยมหิดล">Faculty of Nursing, Mahidol University</h3>
-                    <p class="exp-role" data-en="Web administer" data-th="ผู้ดูแลเว็บไซต์">Web administer</p>
+                    <p class="exp-role" data-en="Web Admin (Year 2 Internship)" data-th="ผู้ดูแลเว็บไซต์ (ฝึกงานชั้นปีที่ 2)">Web Admin (Year 2 Internship)</p>
                     <span class="exp-date" data-en="1 June 2026 - 31 July 2026" data-th="1 มิถุนายน 2569 - 31 กรกฎาคม 2569">1 June - 31 July 2026</span>
                     <p class="exp-desc" data-en="Improved and developed existing websites of the Faculty of Nursing to make them more modern, user-friendly, and better in terms of UX/UI. Responsible for updating websites for two departments in both Thai and English versions. Additionally, assisted the audio-visual department with managing sound/lighting systems and the faculty equipment borrowing system." data-th="ปรับปรุงและพัฒนาเว็บไซต์เดิมของคณะพยาบาลศาสตร์ให้ทันสมัย ใช้งานง่าย และมี UX/UI ที่ดีขึ้น โดยรับผิดชอบปรับปรุงเว็บไซต์ของ 2 ภาควิชา ทั้งเวอร์ชันภาษาไทยและภาษาอังกฤษ รวมถึงช่วยงานฝ่ายโสตทัศนูปกรณ์ในการดูแลระบบแสง เสียง อุปกรณ์ช่วยสอน และระบบการยืม-คืนอุปกรณ์ภายในคณะ">Improved and developed existing websites of the Faculty of Nursing to make them more modern, user-friendly, and better in terms of UX/UI. Responsible for updating websites for two departments in both Thai and English versions. Additionally, assisted the audio-visual department with managing sound/lighting systems and the faculty equipment borrowing system.</p>
                     <div class="exp-actions">
@@ -175,42 +176,119 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Future Year 3 Internship Card Placeholder (Commented out) -->
+            <!--
+            <div class="exp-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <div class="exp-icon"><i class="fas fa-star"></i></div>
+                <div class="exp-info">
+                    <h3 data-en="Faculty of ICT, Mahidol University" data-th="คณะ ICT มหาวิทยาลัยมหิดล">Faculty of ICT, Mahidol University</h3>
+                    <p class="exp-role" data-en="Web Developer (Year 3 Internship)" data-th="นักพัฒนาเว็บไซต์ (ฝึกงานชั้นปีที่ 3)">Web Developer (Year 3 Internship)</p>
+                    <span class="exp-date" data-en="1 June 2027 - 31 July 2027" data-th="1 มิถุนายน 2570 - 31 กรกฎาคม 2570">1 June - 31 July 2027</span>
+                    <p class="exp-desc" data-en="Designed and developed web applications for the Faculty of ICT, Mahidol University during the Year 3 summer internship. Practiced frontend/backend integration and worked with database systems to deliver user-friendly solutions." data-th="ออกแบบและพัฒนาเว็บแอปพลิเคชันให้กับคณะ ICT มหาวิทยาลัยมหิดล ในช่วงฝึกงานฤดูร้อนชั้นปีที่ 3 ได้ฝึกฝนการเชื่อมต่อระบบ Frontend/Backend และการทำงานกับฐานข้อมูลเพื่อส่งมอบงานที่ตอบโจทย์ผู้ใช้งาน">Designed and developed web applications for the Faculty of ICT, Mahidol University during the Year 3 summer internship. Practiced frontend/backend integration and worked with database systems to deliver user-friendly solutions.</p>
+                    <div class="exp-actions">
+                        <a href="internship_y3.html" class="btn-sm">
+                            <i class="fas fa-arrow-right"></i>
+                            <span data-en="View Details" data-th="ดูรายละเอียด">View Details</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            -->
         </div>
 
         <h2 id="projects" class="section-title" data-en="Projects" data-th="ผลงาน">Projects</h2>
-        <div class="projects-container">
-            <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+        
+        <!-- Project Filter Buttons -->
+        <div class="project-filter">
+            <button class="filter-btn active" data-filter="all" data-en="All" data-th="ทั้งหมด">All</button>
+            <button class="filter-btn" data-filter="personal" data-en="Personal" data-th="ส่วนตัว">Personal</button>
+            <button class="filter-btn" data-filter="university" data-en="University" data-th="มหาวิทยาลัย">University</button>
+            <button class="filter-btn" data-filter="internship" data-en="Internship" data-th="ฝึกงาน">Internship</button>
+        </div>
 
+        <div class="projects-container">
+            <!-- Internship Project 4: Faculty of ICT Website (Year 3) (Commented out) -->
+            <!--
+            <div class="project-card" data-category="internship" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                 <div class="project-info">
-                        <span class="project-tag">personal project</span>
-                        <h3 data-en="Frontend Learning Website" data-th="เว็บไซต์สำหรับเรียนรู้ Frontend">
-                            Learning Frontend Website
-                        </h3>
-                        <p data-en="This is a personal project I created to practice and improve my Frontend Development skills. The website provides knowledge about HTML, CSS, JavaScript, and web design through examples that users can try and experiment with. I designed the structure and wrote the main code of the website myself, and I also used Claude AI as a helper in many parts during the development process." data-th="นี่คือโปรเจกต์ส่วนตัวที่ผมสร้างขึ้นเพื่อฝึกและพัฒนาทักษะด้าน Frontend Development เว็บไซต์นี้จะให้ความรู้เกี่ยวกับ HTML, CSS, JavaScript และการออกแบบเว็บผ่านตัวอย่างที่สามารถทดลองได้จริง ผมเป็นคนออกแบบโครงสร้างและเขียนโค้ดหลักของเว็บไซต์ และมีการใช้ Claude AI เป็นผู้ช่วย อีกในหลายๆส่วน">
-                        This is a personal project I created to practice and improve my Frontend Development skills. The website provides knowledge about HTML, CSS, JavaScript, and web design through examples that users can try and experiment with. I designed the structure and wrote the main code of the website myself, and I also used Claude AI as a helper in many parts during the development process.
-                        </p>
-                        <p>
-                            <a href="https://pakornfolk.github.io/Frontend-Decoded/" class="btn-sm">
-                                <i class="fas fa-external-link-alt"></i>
-                                <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">
-                                    Visit Website
-                                </span>
-                            </a>
-                        </p>
-                        
-                            <a href="https://github.com/pakornfolk/Frontend-Decoded/tree/main" class="btn-sm">
-                                <i class="fab fa-github"></i>
-                                <span data-en="Visit Detail for Github" data-th="ดูรายละเอียดโปรเจกต์สำหรับ Github">
-                                    Visit detail project for Github
-                                </span>
-                            </a>
-                        
+                    <span class="project-tag" data-en="Internship (Year 3)" data-th="ฝึกงาน (ปี 3)">Internship (Year 3)</span>
+                    <h3 data-en="Faculty of ICT Website" data-th="เว็บไซต์คณะ ICT มหาวิทยาลัยมหิดล">Faculty of ICT Website</h3>
+                    <p data-en="Developed and optimized features for the faculty's main academic portal. Designed layout elements and tested responsiveness." data-th="ร่วมพัฒนาและออกแบบโครงสร้างเมนู ฟีเจอร์การแสดงข้อมูลหลักสูตร บนเว็บไซต์คณะ ICT ให้มีประสิทธิภาพและเป็นระบบระเบียบมากขึ้น">Developed and optimized features for the faculty's main academic portal. Designed layout elements and tested responsiveness.</p>
+                    <p>
+                        <a href="internship_y3.html" class="btn-sm">
+                            <i class="fas fa-arrow-right"></i>
+                            <span data-en="View Details" data-th="ดูรายละเอียด">View Details</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            -->
+
+            <!-- 2. Internship Project 1: Medical Nursing (Year 2) -->
+            <div class="project-card" data-category="internship" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <div class="project-info">
+                    <span class="project-tag" data-en="Internship (Year 2)" data-th="ฝึกงาน (ปี 2)">Internship (Year 2)</span>
+                    <h3 data-en="Medical Nursing Department Website" data-th="เว็บไซต์ภาควิชาการพยาบาลอายุรศาสตร์">Medical Nursing Department Website</h3>
+                    <p data-en="Improved user experience (UX/UI) of the Department of Medical Nursing website. Made it modern, responsive, and easy to navigate for students and staff." data-th="รับผิดชอบการปรับปรุงและพัฒนาโครงสร้างเว็บของภาควิชาการพยาบาลอายุรศาสตร์ให้มีความทันสมัย รองรับการใช้งานทุกอุปกรณ์ และใช้งานได้สะดวกยิ่งขึ้น">Improved user experience (UX/UI) of the Department of Medical Nursing website. Made it modern, responsive, and easy to navigate for students and staff.</p>
+                    <p>
+                        <a href="https://ns.mahidol.ac.th/department/mn_th/" target="_blank" class="btn-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">Visit Website</span>
+                        </a>
+                    </p>
                 </div>
             </div>
 
-            <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+            <!-- 3. Internship Project 2: Surgical Nursing (Year 2) -->
+            <div class="project-card" data-category="internship" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                 <div class="project-info">
-                    <span class="project-tag">personal project</span>
+                    <span class="project-tag" data-en="Internship (Year 2)" data-th="ฝึกงาน (ปี 2)">Internship (Year 2)</span>
+                    <h3 data-en="Surgical Nursing Department Website" data-th="เว็บไซต์ภาควิชาการพยาบาลศัลยศาสตร์">Surgical Nursing Department Website</h3>
+                    <p data-en="Redesigned and updated the website for the Department of Surgical Nursing, enhancing accessibility and structures for both Thai and English versions." data-th="ปรับปรุงและพัฒนาเว็บไซต์ภาควิชาการพยาบาลศัลยศาสตร์ ทั้งในส่วนโครงสร้างข้อมูล การออกแบบอินเตอร์เฟสให้สวยงามทันสมัยทั้งภาษาไทยและอังกฤษ">Redesigned and updated the website for the Department of Surgical Nursing, enhancing accessibility and structures for both Thai and English versions.</p>
+                    <p>
+                        <a href="https://ns.mahidol.ac.th/department/sn_th/" target="_blank" class="btn-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">Visit Website</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4. Internship Project 3: WHO Collaborating Centre (Year 2) -->
+            <div class="project-card" data-category="internship" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <div class="project-info">
+                    <span class="project-tag" data-en="Internship (Year 2)" data-th="ฝึกงาน (ปี 2)">Internship (Year 2)</span>
+                    <h3 data-en="WHO Collaborating Centre Website" data-th="เว็บไซต์ศูนย์ความร่วมมือ WHO">WHO Collaborating Centre Website</h3>
+                    <p data-en="Redesigned layout and information architecture of WHO Collaborating Centre website. Improved navigation to provide clean access to international research." data-th="ปรับปรุงโครงสร้างข้อมูลและออกแบบเลย์เอาต์ของเว็บไซต์ศูนย์ความร่วมมือกับองค์การอนามัยโลก (WHO CC) ใหม่ทั้งหมด เพื่อให้ใช้งานสะดวกยิ่งขึ้น">Redesigned layout and information architecture of WHO Collaborating Centre website. Improved navigation to provide clean access to international research.</p>
+                    <p>
+                        <a href="https://ns.mahidol.ac.th/division/who/who-index.html" target="_blank" class="btn-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">Visit Website</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5. Personal Project 1: Little Magic Board Game Booking System -->
+            <div class="project-card" data-category="personal" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <div class="project-info">
+                    <span class="project-tag" data-en="Personal Project" data-th="ผลงานส่วนตัว">Personal Project</span>
+                    <h3 data-en="Little Magic Board Game Cafe Website" data-th="เว็บไซต์ร้านบอร์ดเกม Little Magic">Little Magic Board Game Cafe Website</h3>
+                    <p data-en="A modern web application for a board game cafe. It features a real-time queue checking system, table reservation platform, and automated email notifications for status updates. Designed with a clean, responsive UI to help customers find games, check table availability, and book slots instantly." data-th="ระบบจองคิวและจองโต๊ะออนไลน์สำหรับร้านบอร์ดเกม Little Magic ที่ออกแบบมาให้ใช้งานง่ายและรวดเร็ว ช่วยให้ลูกค้าตรวจสอบสถานะคิวแบบเรียลไทม์ เลือกจองโต๊ะตามเวลาที่ต้องการ ค้นหารายชื่อบอร์ดเกมที่น่าสนใจ พร้อมระบบส่งอีเมลแจ้งเตือนสถานะการจองแบบอัตโนมัติ">A modern web application for a board game cafe. It features a real-time queue checking system, table reservation platform, and automated email notifications for status updates. Designed with a clean, responsive UI to help customers find games, check table availability, and book slots instantly.</p>
+                    <p>
+                        <a href="https://littlemagic.netlify.app/" target="_blank" class="btn-sm">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">Visit Website</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 6. Personal Project 2: NT Service Website -->
+            <div class="project-card" data-category="personal" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <div class="project-info">
+                    <span class="project-tag" data-en="Personal Project" data-th="ผลงานส่วนตัว">Personal Project</span>
                     <h3 data-en="NT Service Website" data-th="เว็บไซต์ NT Service">NT Service Website</h3>
                     <p data-en="A website I developed for my family's car repair garage to introduce information and services. It includes a system for customers to book appointments and check their queue status." data-th="เป็นเว็บไซต์ที่ผมพัฒนาขึ้นเองสำหรับธุรกิจอู่ซ่อมรถของครอบครัว ใช้แนะนำข้อมูลและบริการต่างๆ และมีระบบให้ลูกค้าสามารถจองคิวเข้าใช้บริการและตรวจสอบสถานะคิวของตนเองได้">A website I developed for my family's car repair garage to introduce information and services. It includes a system for customers to book appointments and check their queue status.</p>
                     <p>
@@ -228,17 +306,15 @@
                                     Visit detail project for Github
                                 </span>
                         </a>
-                    
                 </div>
             </div>
 
-            <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+            <!-- 7. University Project 1: University Duo-project -->
+            <div class="project-card" data-category="university" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                 <div class="project-info">
-                    <span class="project-tag">Mobile App</span>
+                    <span class="project-tag" data-en="Mobile App" data-th="แอปพลิเคชันมือถือ">Mobile App</span>
                     <h3 data-en="University Duo-project mobile application" data-th="แอพลิเคชั่นโปรเจกต์ (คู่) ของรายวิชาในมหาวิทยาลัย">University Duo-project mobile application</h3>
-                    <p data-en="Developed an application for reporting damaged facilities within a university.
-                                Primarily responsible for backend development, including building a self-hosted API and writing Flutter code for various pages of the application." data-th="ได้พัฒนาแอปพลิเคชันเกี่ยวกับการรายงานสิ่งชำรุดภายในมหาวิทยาลัย โดยมีหน้าที่รับผิดชอบหลักในส่วนของระบบ backend ได้แก่ การสร้าง self-hosted API และการเขียน Flutter สำหรับหน้าเพจต่าง ๆ ภายในแอปพลิเคชัน">Developed an application for reporting damaged facilities within a university.
-                                Primarily responsible for backend development, including building a self-hosted API and writing Flutter code for various pages of the application.</p>
+                    <p data-en="Developed an application for reporting damaged facilities within a university. Primarily responsible for backend development, including building a self-hosted API and writing Flutter code for various pages of the application." data-th="ได้พัฒนาแอปพลิเคชันเกี่ยวกับการรายงานสิ่งชำรุดภายในมหาวิทยาลัย โดยมีหน้าที่รับผิดชอบหลักในส่วนของระบบ backend ได้แก่ การสร้าง self-hosted API และการเขียน Flutter สำหรับหน้าเพจต่าง ๆ ภายในแอปพลิเคชัน">Developed an application for reporting damaged facilities within a university. Primarily responsible for backend development, including building a self-hosted API and writing Flutter code for various pages of the application.</p>
                     <p>
                         <a href="https://github.com/pakornfolk/Mobileapp_/tree/master" class="btn-sm">
                             <i class="fab fa-github"></i>
@@ -253,9 +329,8 @@
                                 Visit prototype for Figma
                             </span>
                         </a>
-                    <p></p>
 
-                    <br>
+                    <br><br>
                     <div>
                         <p class="learn" data-en="What I learned from this project:" data-th="สิ่งที่ได้เรียนรู้จากโปรเจกต์นี้:">
                             What I learned from this project:
@@ -279,10 +354,11 @@
                 </div>
             </div>
 
-            <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+            <!-- 8. University Project 2: University Group Project Website -->
+            <div class="project-card" data-category="university" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                 <div class="project-info">
-                    <span class="project-tag">Group project web</span>
-                    <h3 data-en="University Group Project Wepsite" data-th="เว็บไซต์โปรเจกต์ (กลุ่ม) ของรายวิชาในมหาวิทยาลัย">University Group Project Wepsite</h3>
+                    <span class="project-tag" data-en="University Web Project" data-th="โปรเจกต์เว็บมหาวิทยาลัย">University Web Project</span>
+                    <h3 data-en="University Group Project Website" data-th="เว็บไซต์โปรเจกต์ (กลุ่ม) ของรายวิชาในมหาวิทยาลัย">University Group Project Website</h3>
                     <p data-en="I worked on a group project website for a university course. My main role was backend development. I was responsible for designing and developing the backend structure of the system, managing the MySQL database, and creating APIs using Postman." data-th="ได้ทำเว็บไซต์เป็นโปรเจกต์กลุ่มในรายวิชาของมหาวิทยาลัย โดยหน้าที่หลักของผมคือการทำ Backend รับผิดชอบการออกแบบและพัฒนาโครงสร้างระบบฝั่ง Backend รวมถึงการจัดการฐานข้อมูล MySQL และการสร้าง API ด้วย Postman">I worked on a group project website for a university course. My main role was backend development. I was responsible for designing and developing the backend structure of the system, managing the MySQL database, and creating APIs using Postman.</p>
                     <p>
                         <a href="https://drive.google.com/file/d/1hD2aBZ3dwOM8R5Wmkm-1WxsIYR_97NZn/view?usp=sharing" class="btn-sm">
@@ -291,10 +367,11 @@
                                 Visit details project
                             </span>
                         </a>
-                    </p><div>
+                    </p>
+                    <div>
                         <a href="https://github.com/MUICT-Class/681-projectphase2-681_section1_group1" class="btn-sm">
                                 <i class="fab fa-github"></i>
-                            <span data-en="Visit details project form Github" data-th="ดูรายละเอียดโปรเจกต์สำหรับ Github">
+                            <span data-en="Visit details project from Github" data-th="ดูรายละเอียดโปรเจกต์สำหรับ Github">
                                 Visit detail project for Github
                             </span>
                         </a>
@@ -318,6 +395,34 @@
                                         4. I learned how to call APIs from public web services and self-hosted APIs.
                         </p>  
                     </div>
+                </div>
+            </div>
+
+            <!-- 9. Personal Project 3: Frontend Learning Website -->
+            <div class="project-card" data-category="personal" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <div class="project-info">
+                        <span class="project-tag" data-en="Personal Project" data-th="ผลงานส่วนตัว">Personal Project</span>
+                        <h3 data-en="Frontend Learning Website" data-th="เว็บไซต์สำหรับเรียนรู้ Frontend">
+                            Learning Frontend Website
+                        </h3>
+                        <p data-en="This is a personal project I created to practice and improve my Frontend Development skills. The website provides knowledge about HTML, CSS, JavaScript, and web design through examples that users can try and experiment with. I designed the structure and wrote the main code of the website myself, and I also used Claude AI as a helper in many parts during the development process." data-th="นี่คือโปรเจกต์ส่วนตัวที่ผมสร้างขึ้นเพื่อฝึกและพัฒนาทักษะด้าน Frontend Development เว็บไซต์นี้จะให้ความรู้เกี่ยวกับ HTML, CSS, JavaScript และการออกแบบเว็บผ่านตัวอย่างที่สามารถทดลองได้จริง ผมเป็นคนออกแบบโครงสร้างและเขียนโค้ดหลักของเว็บไซต์ และมีการใช้ Claude AI เป็นผู้ช่วย อีกในหลายๆส่วน">
+                        This is a personal project I created to practice and improve my Frontend Development skills. The website provides knowledge about HTML, CSS, JavaScript, and web design through examples that users can try and experiment with. I designed the structure and wrote the main code of the website myself, and I also used Claude AI as a helper in many parts during the development process.
+                        </p>
+                        <p>
+                            <a href="https://pakornfolk.github.io/Frontend-Decoded/" class="btn-sm">
+                                <i class="fas fa-external-link-alt"></i>
+                                <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">
+                                    Visit Website
+                                </span>
+                            </a>
+                        </p>
+                        
+                            <a href="https://github.com/pakornfolk/Frontend-Decoded/tree/main" class="btn-sm">
+                                <i class="fab fa-github"></i>
+                                <span data-en="Visit Detail for Github" data-th="ดูรายละเอียดโปรเจกต์สำหรับ Github">
+                                    Visit detail project for Github
+                                </span>
+                            </a>
                 </div>
             </div>
         </div>

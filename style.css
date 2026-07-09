@@ -976,3 +976,58 @@ body.light-mode .admin-message-card {
     color: #fff;
     transform: scale(1.1);
 }
+
+/* Project Filtering CSS */
+.project-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border);
+    padding: 10px 24px;
+    border-radius: 50px;
+    color: var(--text-gray);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-white);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--grad);
+    color: #000000;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(249, 212, 35, 0.3);
+}
+
+body.light-mode .filter-btn {
+    background: rgba(0, 0, 0, 0.03);
+    color: var(--text-gray);
+}
+
+body.light-mode .filter-btn:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: var(--text-white);
+}
+
+body.light-mode .filter-btn.active {
+    background: var(--grad);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+}
+
+.project-card.hide {
+    display: none !important;
+}

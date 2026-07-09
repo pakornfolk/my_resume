@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Details - Year 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .internship-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px 30px;
+        }
+        .internship-hero .exp-icon {
+            font-size: 4rem;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 30px;
+        }
+        .internship-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: var(--text-white);
+            background: var(--grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .internship-hero .exp-role {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+        }
+        .internship-hero .exp-date {
+            font-size: 1rem;
+            padding: 8px 20px;
+        }
+        
+        .detail-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .photo-placeholder {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px dashed var(--border);
+            border-radius: 20px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            transition: 0.4s ease;
+        }
+        
+        body.light-mode .photo-placeholder {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .photo-placeholder:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .photo-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        /* Styles for actual photo display */
+        .photo-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            transition: 0.4s ease;
+        }
+        
+        .photo-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-card .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            color: #fff;
+            font-size: 0.95rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: 0.3s ease;
+            pointer-events: none;
+        }
+
+        .photo-card:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ul.custom-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        ul.custom-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: var(--text-gray);
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        ul.custom-list li::before {
+            content: '\f058'; /* Check circle */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+    </style>
+</head>
+<body class="lang-th">
+    <div id="mouse-glow"></div>
+    <div class="blob"></div>
+    <div class="blob2"></div>
+    <div class="blob3"></div>
+
+    <header>
+        <div class="header-inner">
+            <div class="logo">RE<span>SUME.</span></div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html#about" data-en="About" data-th="เกี่ยวกับ">About</a></li>
+                <li><a href="index.html#skills" data-en="Skills" data-th="ทักษะ">Skills</a></li>
+                <li><a href="index.html#experience" class="active" data-en="Experience" data-th="ประสบการณ์">Experience</a></li>
+                <li><a href="index.html#projects" data-en="Projects" data-th="ผลงาน">Projects</a></li>
+                <li><a href="index.html#guestbook" data-en="Messages" data-th="ฝากข้อความ">Messages</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button id="lang-toggle" class="btn-outline">
+                    <i class="fas fa-globe"></i> <span id="lang-text">EN</span>
+                </button>
+                <button id="theme-toggle" class="btn">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button id="mobile-menu-btn" class="btn-outline" style="border: none; font-size: 1.5rem; padding: 5px 10px;">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" style="padding-top: 30px;">
+
+        <!-- Back Button -->
+        <div style="margin-top: 20px;">
+            <a href="index.html" class="btn-sm">
+                <i class="fas fa-arrow-left"></i> 
+                <span data-en="Back to Resume" data-th="กลับสู่หน้าเรซูเม่">Back to Resume</span>
+            </a>
+        </div>
+
+        <!-- Internship Header Hero -->
+        <section class="section" style="margin-top: 40px;">
+            <div class="exp-card internship-hero" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <div class="exp-icon"><i class="fas fa-building"></i></div>
+                <h1 data-en="Faculty of ICT, Mahidol University" data-th="คณะ ICT มหาวิทยาลัยมหิดล">Faculty of ICT, Mahidol University</h1>
+                <p class="exp-role" data-en="Web Developer (Year 3 Student Internship)" data-th="นักพัฒนาเว็บไซต์ (ฝึกงานชั้นปีที่ 3)">Web Developer (Year 3 Student Internship)</p>
+                <span class="exp-date" data-en="1 June 2027 - 31 July 2027" data-th="1 มิถุนายน 2570 - 31 กรกฎาคม 2570">1 June 2027 - 31 July 2027</span>
+            </div>
+        </section>
+
+        <!-- Details Section -->
+        <div class="detail-container">
+            <!-- Overview -->
+            <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--text-white);" data-en="Overview" data-th="ภาพรวมการฝึกงาน">Overview</h3>
+                <p style="color: var(--text-gray); font-size: 1.15rem; line-height: 1.8;" data-en="Designed and developed web applications for the Faculty of ICT, Mahidol University during the Year 3 summer internship. Worked closely with the IT department to implement responsive frontend components, build backend APIs, and manage database systems." data-th="ออกแบบและพัฒนาเว็บแอปพลิเคชันให้กับคณะเทคโนโลยีสารสนเทศและการสื่อสาร (ICT) มหาวิทยาลัยมหิดล ในช่วงฝึกงานชั้นปีที่ 3 โดยทำงานร่วมกับทีมผู้ดูแลระบบในการพัฒนาหน้าบ้าน เชื่อมต่อ API หลังบ้าน และดูแลระบบจัดการฐานข้อมูล">Designed and developed web applications for the Faculty of ICT, Mahidol University during the Year 3 summer internship. Worked closely with the IT department to implement responsive frontend components, build backend APIs, and manage database systems.</p>
+            </div>
+
+            <!-- Featured Internship Projects Grid -->
+            <div class="projects-container" style="margin-top: 0; margin-bottom: 0;">
+                <!-- Featured Internship Project 1 -->
+                <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; margin: 0;">
+                    <span class="project-tag" data-en="Faculty Website" data-th="เว็บไซต์คณะ">Faculty Website</span>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--text-white);" data-en="Main Portal UI Improvement" data-th="ปรับปรุงหน้าตาเว็บไซต์หลักของคณะ">Main Portal UI Improvement</h3>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.7; margin-bottom: 25px;" data-en="Improved user interfaces and layouts for the main student information portal to ensure full accessibility and responsiveness." data-th="ปรับปรุงหน้าเว็บอินเตอร์เฟสของระบบสารสนเทศนักศึกษาหลัก ให้รองรับการแสดงผลหน้าจอมือถืออย่างสมบูรณ์แบบ">Improved user interfaces and layouts for the main student information portal to ensure full accessibility and responsiveness.</p>
+                    
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto;">
+                        <a href="https://www.ict.mahidol.ac.th" target="_blank" class="btn-sm" style="margin-top: 0; padding: 8px 16px; font-size: 0.9rem;">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Featured Internship Project 2 -->
+                <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; margin: 0;">
+                    <span class="project-tag" data-en="Backend Service" data-th="ระบบหลังบ้าน">Backend Service</span>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--text-white);" data-en="Academic Course Registration API" data-th="ระบบ API จัดการวิชาเรียน">Academic Course Registration API</h3>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.7; margin-bottom: 25px;" data-en="Developed API endpoints for students to retrieve course details and schedule information, tested using Postman." data-th="พัฒนาชุด API สำหรับดึงข้อมูลรายวิชาและตารางเรียนของนักศึกษา พร้อมทดสอบความถูกต้องและประสิทธิภาพของ API ด้วย Postman">Developed API endpoints for students to retrieve course details and schedule information, tested using Postman.</p>
+                    
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto;">
+                        <span class="btn-sm" style="margin-top: 0; padding: 8px 16px; font-size: 0.9rem; opacity: 0.8; pointer-events: none;">
+                            <i class="fas fa-code"></i>
+                            <span data-en="Backend API" data-th="ระบบหลังบ้าน API">Backend API</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Featured Internship Project 3 -->
+                <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; margin: 0;">
+                    <span class="project-tag" data-en="Database Management" data-th="จัดการฐานข้อมูล">Database Management</span>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--text-white);" data-en="Equipment Booking Database" data-th="ระบบจัดการฐานข้อมูลการจองอุปกรณ์">Equipment Booking Database</h3>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.7; margin-bottom: 25px;" data-en="Optimized MySQL tables for tracking laboratory equipment loans and reservations to ensure zero data conflicts." data-th="ออกแบบและเพิ่มประสิทธิภาพฐานข้อมูล MySQL สำหรับระบบยืม-คืนอุปกรณ์ห้องปฏิบัติการคอมพิวเตอร์ ป้องกันปัญหาข้อมูลซ้ำซ้อน">Optimized MySQL tables for tracking laboratory equipment loans and reservations to ensure zero data conflicts.</p>
+                    
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto;">
+                        <span class="btn-sm" style="margin-top: 0; padding: 8px 16px; font-size: 0.9rem; opacity: 0.8; pointer-events: none;">
+                            <i class="fas fa-database"></i>
+                            <span data-en="MySQL Database" data-th="ฐานข้อมูล MySQL">MySQL Database</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Responsibilities -->
+            <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <h3 style="font-size: 2rem; margin-bottom: 10px; color: var(--text-white);" data-en="Key Responsibilities & Achievements" data-th="หน้าที่รับผิดชอบและผลงานสำคัญ">Key Responsibilities & Achievements</h3>
+                <ul class="custom-list">
+                    <li><span data-en="Designed and implemented clean frontend designs using HTML, CSS, and modern practices." data-th="ออกแบบและพัฒนาหน้าตาเว็บ (UI) ให้รองรับการใช้งานของนักศึกษาและคณาจารย์อย่างมีประสิทธิภาพ">Designed and implemented clean frontend designs using HTML, CSS, and modern practices.</span></li>
+                    <li><span data-en="Built RESTful API endpoints for registration services." data-th="พัฒนาชุดคำสั่ง API (RESTful API) เพื่อรับส่งข้อมูลวิชาเรียนและตารางเรียน">Built RESTful API endpoints for registration services.</span></li>
+                    <li><span data-en="Worked with MySQL database migration and queries optimization." data-th="ปรับแต่งและแก้ไขฐานข้อมูล MySQL ให้มีประสิทธิภาพในการสืบค้นข้อมูล">Worked with MySQL database migration and queries optimization.</span></li>
+                    <li><span data-en="Participated in weekly developer meetings to discuss requirements." data-th="เข้าร่วมการประชุมทีมพัฒนาประจำสัปดาห์เพื่อนำเสนอความคืบหน้าของงาน">Participated in weekly developer meetings to discuss requirements.</span></li>
+                </ul>
+            </div>
+
+            <!-- Tech Stack / Tools -->
+            <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--text-white);" data-en="Tools & Technologies Used" data-th="เครื่องมือและเทคโนโลยีที่ใช้">Tools & Technologies Used</h3>
+                
+                <div class="skills-grid" style="margin-top: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                    <div class="skill-box" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML/CSS</h4>
+                    </div>
+                    <div class="skill-box" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                        <i class="fab fa-js"></i>
+                        <h4>JavaScript</h4>
+                    </div>
+                    <div class="skill-box" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                        <i class="fas fa-database"></i>
+                        <h4>MySQL</h4>
+                    </div>
+                    <div class="skill-box" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                        <i class="fab fa-github"></i>
+                        <h4>GitHub</h4>
+                    </div>
+                    <div class="skill-box" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Postman</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photos / Gallery -->
+            <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                <h3 style="font-size: 2rem; margin-bottom: 10px; color: var(--text-white);" data-en="Gallery" data-th="ภาพการฝึกงาน">Gallery</h3>
+            
+                <div class="photo-grid">
+                    <div class="photo-placeholder">
+                        <i class="fas fa-image"></i>
+                        <span data-en="Photo Placeholder" data-th="ภาพตัวอย่างบรรยากาศ">Photo Placeholder</span>
+                    </div>
+                    <div class="photo-placeholder">
+                        <i class="fas fa-laptop-code"></i>
+                        <span data-en="Project Screenshot" data-th="ภาพตัวอย่างผลงาน">Project Screenshot</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© Website design by Pakornkiat Vonma</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
