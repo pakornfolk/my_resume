@@ -81,6 +81,54 @@
             opacity: 0.5;
         }
 
+        /* Styles for actual photo display */
+        .photo-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            transition: 0.4s ease;
+        }
+        
+        .photo-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-card .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            color: #fff;
+            font-size: 0.95rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: 0.3s ease;
+            pointer-events: none;
+        }
+
+        .photo-card:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         ul.custom-list {
             list-style: none;
             padding: 0;
@@ -122,6 +170,7 @@
                 <li><a href="index.html#skills" data-en="Skills" data-th="ทักษะ">Skills</a></li>
                 <li><a href="index.html#experience" class="active" data-en="Experience" data-th="ประสบการณ์">Experience</a></li>
                 <li><a href="index.html#projects" data-en="Projects" data-th="ผลงาน">Projects</a></li>
+                <li><a href="index.html#guestbook" data-en="Messages" data-th="ฝากข้อความ">Messages</a></li>
             </ul>
 
             <div class="nav-right">
@@ -152,9 +201,9 @@
         <section class="section" style="margin-top: 40px;">
             <div class="exp-card internship-hero" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                 <div class="exp-icon"><i class="fas fa-building"></i></div>
-                <h1 data-en="[Company Name]" data-th="[ชื่อบริษัท]">[Company Name]</h1>
-                <p class="exp-role" data-en="[Your Role / Position]" data-th="[ตำแหน่งที่ฝึกงาน]">[Your Role / Position]</p>
-                <span class="exp-date" data-en="[Start Date] - [End Date]" data-th="[วันเริ่มต้น] - [วันสิ้นสุด]">[Start Date] - [End Date]</span>
+                <h1 data-en="Faculty of Nursing, Mahidol University" data-th="คณะพยาบาลศาสตร์ มหาวิทยาลัยมหิดล">Faculty of Nursing, Mahidol University</h1>
+                <p class="exp-role" data-en="Web administer" data-th="ผู้ดูแลเว็บไซต์">Web administer</p>
+                <span class="exp-date" data-en="1 June 2026 - 31 July 2026" data-th="1 มิถุนายน 2569 - 31 กรกฎาคม 2569">1 June 2026 - 31 July 2026</span>
             </div>
         </section>
 
@@ -163,16 +212,81 @@
             <!-- Overview -->
             <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                 <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--text-white);" data-en="Overview" data-th="ภาพรวมการฝึกงาน">Overview</h3>
-                <p style="color: var(--text-gray); font-size: 1.15rem; line-height: 1.8;" data-en="[Write a detailed summary of your internship experience here. What does the company do? What was your main objective during the internship? Describe the environment and team you worked with.]" data-th="[เขียนสรุปรายละเอียดการฝึกงานของคุณที่นี่ บริษัททำเกี่ยวกับอะไร? จุดประสงค์หลักของคุณคืออะไร? บรรยากาศการทำงานและทีมที่คุณร่วมงานด้วยเป็นอย่างไร?]">[Write a detailed summary of your internship experience here. What does the company do? What was your main objective during the internship? Describe the environment and team you worked with.]</p>
+                <p style="color: var(--text-gray); font-size: 1.15rem; line-height: 1.8;" data-en="Improved and developed existing websites of the Faculty of Nursing to make them more modern, user-friendly, and optimize their UX/UI. Responsible for updating websites for two academic departments in both Thai and English versions, and completely redesigning the WHO Collaborating Centre website in the English version." data-th="ปรับปรุงและพัฒนาเว็บไซต์เดิมของคณะพยาบาลศาสตร์ให้ทันสมัย ใช้งานง่าย และมี UX/UI ที่ดีขึ้น โดยรับผิดชอบปรับปรุงเว็บไซต์ของ 2 ภาควิชา (ทั้งเวอร์ชันภาษาไทยและภาษาอังกฤษ) และดำเนินการปรับปรุงโครงสร้างของเว็บไซต์ศูนย์ความร่วมมือกับองค์การอนามัยโลก (WHO CC)">Improved and developed existing websites of the Faculty of Nursing to make them more modern, user-friendly, and optimize their UX/UI. Responsible for updating websites for two academic departments in both Thai and English versions, and completely redesigning the WHO Collaborating Centre website in the English version.</p>
+            </div>
+
+            <!-- Featured Internship Projects Grid -->
+            <div class="projects-container" style="margin-top: 0; margin-bottom: 0;">
+                <!-- Featured Internship Project 1 -->
+                <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; margin: 0;">
+                    <span class="project-tag" data-en="Department Website" data-th="เว็บไซต์ภาควิชา">Department Website</span>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--text-white);" data-en="Department of Medical Nursing" data-th="ภาควิชาการพยาบาลอายุรศาสตร์">Department of Medical Nursing</h3>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.7; margin-bottom: 25px;" data-en="Responsible for updating and improving the user experience (UX/UI) of the Department of Medical Nursing website to make it modern, responsive, and easy to navigate for students and staff." data-th="รับผิดชอบการปรับปรุงและพัฒนาโครงสร้างเว็บของภาควิชาการพยาบาลอายุรศาสตร์ให้มีความทันสมัย รองรับการใช้งานทุกอุปกรณ์ และอำนวยความสะดวกในการเข้าถึงข้อมูลให้กับนักศึกษาและบุคลากร">Responsible for updating and improving the user experience (UX/UI) of the Department of Medical Nursing website to make it modern, responsive, and easy to navigate for students and staff.</p>
+                    
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto;">
+                        <a href="https://ns.mahidol.ac.th/department/mn_th/" target="_blank" class="btn-sm" style="margin-top: 0; padding: 8px 16px; font-size: 0.9rem;">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">Visit Website</span>
+                        </a>
+                        <!-- 
+                        <a href="https://github.com" target="_blank" class="btn-sm" style="margin-top: 0; padding: 8px 16px; font-size: 0.9rem; background: rgba(255,255,255,0.05); color: var(--text-white); border: 1px solid var(--border);">
+                            <i class="fab fa-github"></i>
+                            <span data-en="Source Code" data-th="ดูโค้ด (GitHub)">Source Code</span>
+                        </a>
+                        -->
+                    </div>
+                </div>
+
+                <!-- Featured Internship Project 2 -->
+                <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; margin: 0;">
+                    <span class="project-tag" data-en="Department Website" data-th="เว็บไซต์ภาควิชา">Department Website</span>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--text-white);" data-en="Department of Surgical Nursing" data-th="ภาควิชาการพยาบาลศัลยศาสตร์">Department of Surgical Nursing</h3>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.7; margin-bottom: 25px;" data-en="Redesigned and updated the website for the Department of Surgical Nursing, enhancing accessibility, structuring content logically, and creating a modern look for both Thai and English audiences." data-th="ปรับปรุงและพัฒนาเว็บไซต์ภาควิชาการพยาบาลศัลยศาสตร์ ทั้งในส่วนโครงสร้างข้อมูล การออกแบบอินเตอร์เฟสให้ใช้งานง่ายขึ้น และมีความสวยงามทันสมัยทั้งเวอร์ชันภาษาไทยและภาษาอังกฤษ">Redesigned and updated the website for the Department of Surgical Nursing, enhancing accessibility, structuring content logically, and creating a modern look for both Thai and English audiences.</p>
+                    
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto;">
+                        <a href="https://ns.mahidol.ac.th/department/sn_th/" target="_blank" class="btn-sm" style="margin-top: 0; padding: 8px 16px; font-size: 0.9rem;">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">Visit Website</span>
+                        </a>
+                        <!-- 
+                        <a href="https://github.com" target="_blank" class="btn-sm" style="margin-top: 0; padding: 8px 16px; font-size: 0.9rem; background: rgba(255,255,255,0.05); color: var(--text-white); border: 1px solid var(--border);">
+                            <i class="fab fa-github"></i>
+                            <span data-en="Source Code" data-th="ดูโค้ด (GitHub)">Source Code</span>
+                        </a>
+                        -->
+                    </div>
+                </div>
+
+                <!-- Featured Internship Project 3 -->
+                <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; margin: 0;">
+                    <span class="project-tag" data-en="Collaborating Centre Website" data-th="เว็บไซต์ศูนย์ความร่วมมือ">Collaborating Centre Website</span>
+                    <h3 style="font-size: 1.8rem; margin-bottom: 15px; color: var(--text-white);" data-en="WHO Collaborating Centre" data-th="ศูนย์ความร่วมมือกับองค์การอนามัยโลก (WHO CC)">WHO Collaborating Centre</h3>
+                    <p style="color: var(--text-gray); font-size: 1.1rem; line-height: 1.7; margin-bottom: 25px;" data-en="Redesigned and modernized the layout and information architecture of the WHO Collaborating Centre website. Improved usability and navigation to provide clean access to international research and academic collaborations." data-th="ปรับปรุงโครงสร้างข้อมูลและออกแบบเลย์เอาต์ของเว็บไซต์ศูนย์ความร่วมมือกับองค์การอนามัยโลก (WHO CC) ใหม่ทั้งหมด เพื่อให้มีความทันสมัย สวยงาม และสามารถเข้าถึงข้อมูลงานวิจัยและความร่วมมือทางวิชาการระดับสากลได้สะดวกยิ่งขึ้น">Redesigned and modernized the layout and information architecture of the WHO Collaborating Centre website. Improved usability and navigation to provide clean access to international research and academic collaborations.</p>
+                    
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto;">
+                        <a href="https://ns.mahidol.ac.th/division/who/who-index.html" target="_blank" class="btn-sm" style="margin-top: 0; padding: 8px 16px; font-size: 0.9rem;">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span data-en="Visit Website" data-th="เยี่ยมชมเว็บไซต์">Visit Website</span>
+                        </a>
+                        <!-- 
+                        <a href="https://github.com" target="_blank" class="btn-sm" style="margin-top: 0; padding: 8px 16px; font-size: 0.9rem; background: rgba(255,255,255,0.05); color: var(--text-white); border: 1px solid var(--border);">
+                            <i class="fab fa-github"></i>
+                            <span data-en="Source Code" data-th="ดูโค้ด (GitHub)">Source Code</span>
+                        </a>
+                        -->
+                    </div>
+                </div>
             </div>
 
             <!-- Key Responsibilities -->
             <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                 <h3 style="font-size: 2rem; margin-bottom: 10px; color: var(--text-white);" data-en="Key Responsibilities & Achievements" data-th="หน้าที่รับผิดชอบและผลงานสำคัญ">Key Responsibilities & Achievements</h3>
                 <ul class="custom-list">
-                    <li><span data-en="[Responsibility or Achievement 1: E.g., Developed a new feature that increased user engagement by 20%]" data-th="[หน้าที่หรือผลงานที่ 1: เช่น พัฒนาฟีเจอร์ใหม่ที่ช่วยเพิ่มยอดการใช้งาน 20%]">[Responsibility or Achievement 1: E.g., Developed a new feature that increased user engagement by 20%]</span></li>
-                    <li><span data-en="[Responsibility or Achievement 2: E.g., Collaborated with the backend team to integrate RESTful APIs]" data-th="[หน้าที่หรือผลงานที่ 2: เช่น ทำงานร่วมกับทีม Backend ในการเชื่อมต่อ RESTful APIs]">[Responsibility or Achievement 2: E.g., Collaborated with the backend team to integrate RESTful APIs]</span></li>
-                    <li><span data-en="[Responsibility or Achievement 3: E.g., Designed and implemented a responsive UI using Figma and CSS]" data-th="[หน้าที่หรือผลงานที่ 3: เช่น ออกแบบและสร้าง UI ที่รองรับทุกหน้าจอด้วย Figma และ CSS]">[Responsibility or Achievement 3: E.g., Designed and implemented a responsive UI using Figma and CSS]</span></li>
+                    <li><span data-en="Improved the Faculty of Nursing website UI/UX to be fully responsive and user-friendly." data-th="ปรับปรุงโครงสร้าง UI/UX เว็บไซต์คณะพยาบาลศาสตร์ให้รองรับการแสดงผลทุกหน้าจอและใช้งานง่ายขึ้น">Improved the Faculty of Nursing website UI/UX to be fully responsive and user-friendly.</span></li>
+                    <li><span data-en="Optimized localized department websites for both Thai and English versions, including the WHO Collaborating Centre site." data-th="ปรับปรุงและพัฒนาเว็บไซต์ย่อยของภาควิชาต่าง ๆ เวอร์ชันภาษาไทยและภาษาอังกฤษ รวมถึงเว็บไซต์ศูนย์ความร่วมมือกับองค์การอนามัยโลก (WHO CC)">Optimized localized department websites for both Thai and English versions, including the WHO Collaborating Centre site.</span></li>
+                    <li><span data-en="Collaborated with academic department staffs to arrange content structure and menu design." data-th="ร่วมงานประสานงานกับเจ้าหน้าที่ประจำภาควิชาในการออกแบบโครงสร้างเมนูและจัดเนื้อหาบนเว็บ">Collaborated with academic department staffs to arrange content structure and menu design.</span></li>
+                    <li><span data-en="Assisted the audio-visual department with managing lighting, sound systems, and lecture room multimedia equipment." data-th="ช่วยเหลือฝ่ายโสตทัศนูปกรณ์ในการติดตั้งและดูแลระบบไฟ ระบบเสียง และอุปกรณ์มัลติมีเดียช่วยสอนภายในห้องบรรยาย">Assisted the audio-visual department with managing lighting, sound systems, and lecture room multimedia equipment.</span></li>
+                    <li><span data-en="Managed and tracked the equipment borrowing and returning system within the faculty." data-th="ดูแลระบบการยืม-คืน อุปกรณ์โสตทัศนูปกรณ์และเครื่องมือช่วยสอนต่าง ๆ ภายในคณะ">Managed and tracked the equipment borrowing and returning system within the faculty.</span></li>
                 </ul>
             </div>
 
@@ -180,7 +294,6 @@
             <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                 <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--text-white);" data-en="Tools & Technologies Used" data-th="เครื่องมือและเทคโนโลยีที่ใช้">Tools & Technologies Used</h3>
                 
-                <!-- Reusing skills-grid from style.css -->
                 <div class="skills-grid" style="margin-top: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
                     <div class="skill-box" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
                         <i class="fab fa-html5"></i>
@@ -195,29 +308,38 @@
                         <h4>Figma</h4>
                     </div>
                     <div class="skill-box" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
-                        <i class="fas fa-database"></i>
-                        <h4>Database</h4>
+                        <i class="fab fa-github"></i>
+                        <h4>GitHub</h4>
+                    </div>
+                    <div class="skill-box" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
+                        <i class="fas fa-robot"></i>
+                        <h4>Google Antigravity (AI)</h4>
                     </div>
                 </div>
             </div>
 
             <!-- Photos / Gallery -->
             <div class="project-card" style="opacity: 0; transform: translateY(30px); transition: 0.8s ease-out;">
-                <h3 style="font-size: 2rem; margin-bottom: 10px; color: var(--text-white);" data-en="Gallery" data-th="ภาพถ่ายบรรยากาศ">Gallery</h3>
-                <p style="color: var(--text-gray); font-size: 1.1rem; margin-bottom: 20px;" data-en="[Replace these placeholders with real photos using &lt;img src='...'&gt; tags to showcase your workplace, team, or project presentations.]" data-th="[เปลี่ยนกล่องเหล่านี้เป็นรูปภาพจริงโดยใช้แท็ก &lt;img src='...'&gt; เพื่อโชว์บรรยากาศที่ทำงาน, ทีมงาน หรือตอนพรีเซนต์โปรเจกต์]">[Replace these placeholders with real photos using &lt;img src='...'&gt; tags to showcase your workplace, team, or project presentations.]</p>
-                
+                <h3 style="font-size: 2rem; margin-bottom: 10px; color: var(--text-white);" data-en="Gallery" data-th="ภาพการฝึกงาน">Gallery</h3>
+            
                 <div class="photo-grid">
-                    <div class="photo-placeholder">
-                        <i class="fas fa-image"></i>
-                        <span data-en="Insert Photo Here" data-th="แทรกรูปภาพที่นี่">Insert Photo Here</span>
+                    <div class="photo-card">
+                        <img src="img/internship.jpg" alt="Internship Workplace">
+                        <div class="caption">
+                            <span data-en="Workplace Atmosphere" data-th="บรรยากาศการฝึกงาน">Workplace Atmosphere</span>
+                        </div>
                     </div>
-                    <div class="photo-placeholder">
-                        <i class="fas fa-users"></i>
-                        <span data-en="Insert Photo Here" data-th="แทรกรูปภาพที่นี่">Insert Photo Here</span>
+                    <div class="photo-card">
+                        <img src="img/internship1.jpg" alt="Team and Projects">
+                        <div class="caption">
+                            <span data-en="Website Example" data-th="ภาพตัวอย่างเว็บไซต์">Website Example</span>
+                        </div>
                     </div>
-                    <div class="photo-placeholder">
-                        <i class="fas fa-laptop-code"></i>
-                        <span data-en="Insert Photo Here" data-th="แทรกรูปภาพที่นี่">Insert Photo Here</span>
+                    <div class="photo-card">
+                        <img src="img/internship2.jpg" alt="My Profile">
+                        <div class="caption">
+                            <span data-en="Manage Equipment Loan System" data-th="ดูแลระบบการยืม-คืน">Manage Equipment Loan System</span>
+                        </div>
                     </div>
                 </div>
             </div>
